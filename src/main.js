@@ -1,38 +1,56 @@
 const canvas = document.createElement("canvas");
 const c = canvas.getContext("2d");
 
-document.body.appendChild(canvas);
+document.getElementById('bg').appendChild(canvas);
 
-c.fillRect(0,0,300,150);
+let w = canvas.width = window.innerWidth;
+let h = canvas.height = window.innerHeight;
+
+c.fillStyle = "#b983ff";
+c.fillRect(0,0, w, h);
 
 function plot(x, y){
-  c.fillStyle = "#fff";
-  c.fillRect(x,y,1,1); 
+	c.fillStyle = "#09c";
+  	c.fillRect(x,y,1,1); 
 }
 
-function plotFriend(){
-	let a = Math.cos(Math.PI/4);
 
-	for (let y=1; y<=141; y+=5){
-		let e = a * y;
-		let c = y - 70;
-		for (let x=1; x<=141; x++){
-			let d = x - 70;
-			let z = 80 * Math.exp(-0.001 * (c*c+d*d));
-			let x1 = x + e ;
-			let y1 = z + e ;
-			plot(x1, y1);
-		}
+function setFrame(arg){
+	const frame = document.createElement("iframe");
+	frame.src = "./"+arg+"/main.html";
+	frame.id = "day_frame";
+	document.getElementById('frame').appendChild(frame);
+}
+
+function unsetFrame(){
+	day_frame.src = '';	
+	//day_frame.remove();
+}
+
+
+class Frame {
+	constructor(parent, name, src){
+		
 	}
 }
 
-plotFriend();
 
-const ranger = document.createElement("input");
-ranger.type = "range";
-document.body.appendChild(ranger);
 
-//const s1 = new Slider(document.body, "Width", 300, 0, 500, render);
+
+
+
+
+
+
+
+
+
+
+
+
+//const ranger = document.createElement("input");
+//ranger.type = "range";
+//document.body.appendChild(ranger);
 
 class MagicSlider {
 	//constructor(parent, label, value, min, max, defaultHandler) {
@@ -75,16 +93,8 @@ class MagicSlider {
 	}
 
 }
+//const s1 = new MagicSlider(document.body, "Width", 10, 10 ,10);
 
-//customElements.define("magic-slider", Slider);
-
-const s1 = new MagicSlider(document.body, "Width", 10, 10 ,10);
-
-//	function createInput(type, id, className, parent) {
-//        var input = createElement("input", id, className, parent);
-//        input.type = type;
-//        return input;
-//    }
 
 
 

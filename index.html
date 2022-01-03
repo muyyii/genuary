@@ -5,14 +5,26 @@
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-    <script type="text/javascript" src="src/main.js"></script>
     <script type="text/javascript" src=""></script>
     <script type="text/javascript" src=""></script>
-	<h1>Al parecer esto es una página</h1>
-	<h3>Y muy buena</h3>
 
-	<iframe src="01_jan/main.html" height="300" width="300" title="Iframe Example"></iframe>
-	<iframe src="02_jan/main.html" height="300" width="300" title="Iframe Example"></iframe>
-	<iframe src="03_jan/main.html"></iframe>
+	<div class="background" id="bg"></div>
+	
+	<div class="main">
+		<h1>Al parecer esto es una página</h1>
+		<h3>Y muy buena</h3>
+	
+		<a href="javascript:setFrame('01_jan');">asdasdasd
+			<iframe src="01_jan/main.html" height="300" width="300" title="Iframe Example"></iframe>
+		</a>
+		<iframe src="02_jan/main.html" height="300" width="300" title="Iframe Example"></iframe>
+		<iframe src="01_jan/main.html" height="220" width="220"></iframe>
+	</div>
+
+	<div id="frame"></div>
+	<button onclick="unsetFrame();">TURN IT OFF</button>
+
+    <script type="text/javascript" src="src/main.js"></script>
+
   </body>
 </html>

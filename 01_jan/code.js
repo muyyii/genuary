@@ -1,16 +1,18 @@
 const canvas = document.createElement("canvas");
 const c = canvas.getContext("2d");
 
-let w = canvas.width = 300;
-let h = canvas.height = 300;
+let w = canvas.width = window.innerWidth;
+let h = canvas.height = window.innerHeight;
+//let w = canvas.width = 300;
+//let h = canvas.height = 300;
 
 document.body.appendChild(canvas);
 
-c.fillRect(0,0,300,300);
+c.fillRect(0,0,w,h);
 
 function plot(x, y){
   c.fillStyle = "#09c";
   c.fillRect(x,y,10,10); 
 }
 
-plot(30, 30);
+plot(100, 100);
