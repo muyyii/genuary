@@ -16,3 +16,11 @@ iframe {
 	margin:0px;
 	z-index: -1;
 }
+
+.main {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/* flex-flow: row wrap;*/
+	flex: 200px;
+}
