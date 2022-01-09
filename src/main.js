@@ -1,5 +1,7 @@
 const canvas = document.createElement("canvas");
 const c = canvas.getContext("2d");
+const scene = document.getElementById("scene");
+const stage = document.getElementById("stage");
 
 document.getElementById('bg').appendChild(canvas);
 
@@ -14,17 +16,14 @@ function plot(x, y){
   	c.fillRect(x,y,1,1); 
 }
 
-
 function setFrame(arg){
-	const frame = document.createElement("iframe");
-	frame.src = "./"+arg+"/main.html";
-	frame.id = "day_frame";
-	document.getElementById('frame').appendChild(frame);
+	scene.src = "./"+arg+"/main.html";
+	stage.style.display = "block";
 }
 
 function unsetFrame(){
-	day_frame.src = '';	
-	//day_frame.remove();
+	scene.src = '';	
+	stage.style.display = "none";
 }
 
 
